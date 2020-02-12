@@ -1,32 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.lister.nestedscrolltest.NestedLinearLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_nested_linear_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <com.youth.banner.Banner
-        android:id="@+id/main_banner"
+    <Button
+        android:id="@+id/btn_mounting"
         android:layout_width="match_parent"
-        android:layout_height="240dp">
-    </com.youth.banner.Banner>
+        android:layout_height="wrap_content"
+        android:text="标题吸顶效果"/>
 
-    <TextView
+    <Button
+        android:id="@+id/btn_bounce"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/comment_header_text_height"
-        android:background="@android:color/darker_gray"
-        android:textColor="@android:color/black"
-        android:textSize="20sp"
-        android:gravity="center_vertical"
-        android:paddingStart="20dp"
-        android:text="评论列表"/>
+        android:layout_height="wrap_content"
+        android:text="列表回弹"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/main_rv_comments"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-
-</com.lister.nestedscrolltest.NestedLinearLayout>
+</LinearLayout>

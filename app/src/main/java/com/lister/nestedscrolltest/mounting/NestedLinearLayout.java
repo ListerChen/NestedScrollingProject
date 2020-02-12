@@ -1,5 +1,5 @@
 
-package com.lister.nestedscrolltest;
+package com.lister.nestedscrolltest.mounting;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -19,6 +19,7 @@ import androidx.core.view.NestedScrollingParentHelper;
 import androidx.core.view.ViewCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.lister.nestedscrolltest.R;
 import com.youth.banner.Banner;
 
 public class NestedLinearLayout extends LinearLayout implements NestedScrollingParent2 {
