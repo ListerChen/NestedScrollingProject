@@ -111,8 +111,8 @@ public class BounceLayout extends LinearLayout implements NestedScrollingParent2
                     startBounceAnimator(mScroller.getCurrVelocity() * mLastSign);
                 } else {
                     startOverScroll(dyUnconsumed);
-                    ViewCompat.stopNestedScroll(target, type);
                 }
+                ViewCompat.stopNestedScroll(target, type);
             }
         }
     }
