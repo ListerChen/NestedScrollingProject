@@ -19,7 +19,7 @@ class MixedLayout : ViewGroup, NestedScrollingParent3 {
 
     private val nestedScrollingParentHelper = NestedScrollingParentHelper(this)
 
-    private val loadUrl = "https://github.com/ListerChen/NestedScrollTest"
+    private val loadUrl = "https://github.com/ListerChen/NestedScrollingProject"
     private val webView: NestedScrollWebView = NestedScrollWebView(context)
     private val recyclerViewWrapper = RecyclerViewWrapper(context)
     private val recyclerView: RecyclerView = recyclerViewWrapper.getRecyclerView()
