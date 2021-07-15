@@ -5,16 +5,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context="com.lister.nestedscrollingproject.MainActivity">
 
     <Button
-        android:id="@+id/btn_mounting"
+        android:id="@+id/coordinator_layout_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="标题吸顶效果"/>
+        android:text="CoordinatorLayout1"/>
 
     <Button
-        android:id="@+id/btn_bounce"
+        android:id="@+id/nested_scroll_simple"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="嵌套滑动基础示例"/>
+
+    <Button
+        android:id="@+id/nested_scroll_mixed_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="WebView与RecyclerView混合排布"/>
+
+    <Button
+        android:id="@+id/nested_scroll_bounce"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="列表回弹"/>

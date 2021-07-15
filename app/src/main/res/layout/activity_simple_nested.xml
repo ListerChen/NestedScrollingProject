@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.lister.nestedscrollingproject.simple.SimpleNestedLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.lister.nestedscrollingproject.simple.SimpleNestedActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:src="@drawable/taylor2"
+        android:scaleType="centerCrop"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/simple_nested_title_height"
+        android:background="@android:color/darker_gray"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:gravity="center_vertical"
+        android:text="   List"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/simple_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</com.lister.nestedscrollingproject.simple.SimpleNestedLinearLayout>

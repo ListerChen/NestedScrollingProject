@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.lister.nestedscrolltest">
-
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+<manifest package="com.lister.nestedscrolltest"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
         android:allowBackup="true"
@@ -12,9 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".bounce.BounceActivity"></activity>
-        <activity android:name=".mounting.MountingActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name="com.lister.nestedscrollingproject.simple.SimpleNestedActivity"></activity>
+        <activity android:name="com.lister.nestedscrollingproject.mixed.MixedLayoutActivity" />
+        <activity android:name="com.lister.nestedscrollingproject.coordinator.CoordinatorActivity" />
+        <activity android:name="com.lister.nestedscrollingproject.bounce.BounceLayoutActivity" />
+        <activity android:name="com.lister.nestedscrollingproject.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,5 +21,8 @@
             </intent-filter>
         </activity>
     </application>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>
