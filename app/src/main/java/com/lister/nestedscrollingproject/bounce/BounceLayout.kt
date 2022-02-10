@@ -31,12 +31,12 @@ class BounceLayout : FrameLayout, NestedScrollingParent2 {
     }
 
     private val mNestedScrollingParentHelper: NestedScrollingParentHelper = NestedScrollingParentHelper(this)
-    private val mInterpolator: OverScrollerInterpolator = OverScrollerInterpolator(0.6f)
+    private val mInterpolator: OverScrollerInterpolator = OverScrollerInterpolator(0.3f)
     private var mOrientation = 0
     private val mScroller: OverScroller = OverScroller(context, QuinticInterpolator())
 
     private var mBounceRunnable: BounceAnimRunnable? = null
-    private val mMaxOverScrollDistance = 300
+    private val mMaxOverScrollDistance = 600
     private var mOverScrollBorder = 0
     private var mOverScrollDistance = 0
 
@@ -56,7 +56,7 @@ class BounceLayout : FrameLayout, NestedScrollingParent2 {
     }
 
     private fun initSettings() {
-        mOverScrollBorder = mMaxOverScrollDistance * 3
+        mOverScrollBorder = mMaxOverScrollDistance * 6
     }
 
     override fun onStartNestedScroll(child: View, target: View, axes: Int, type: Int): Boolean {
@@ -124,8 +124,8 @@ class BounceLayout : FrameLayout, NestedScrollingParent2 {
     override fun onNestedPreFling(target: View, velocityX: Float, velocityY: Float): Boolean {
         mLastSign = if (velocityY < 0) -1 else 1
         mScroller.forceFinished(true)
-        mScroller.fling(0, 0, 0, velocityY.toInt(), 0,
-            Int.MAX_VALUE, 0, Int.MAX_VALUE)
+        mScroller.fling(0, 0, 0, velocityY.toInt(),
+            -Int.MAX_VALUE, Int.MAX_VALUE, -Int.MAX_VALUE, Int.MAX_VALUE)
         return false
     }
 
