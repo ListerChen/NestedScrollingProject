@@ -41,6 +41,7 @@ class BounceLayout : FrameLayout, NestedScrollingParent2 {
     private var mOverScrollDistance = 0
 
     private var mSpringBackAnimator: ValueAnimator? = null
+    private var mLastVelocity = 0f
     private var mLastSign = 0
 
     constructor(context: Context) : super(context) {
@@ -105,7 +106,11 @@ class BounceLayout : FrameLayout, NestedScrollingParent2 {
             } else {
                 if (mOverScrollDistance == 0) {
                     mScroller.computeScrollOffset()
-                    startBounceAnimator(mScroller.currVelocity * mLastSign)
+                    val velocityY = mScroller.currVelocity
+                    mScroller.forceFinished(true)
+                    if (mLastVelocity != velocityY) {
+                        startBounceAnimator(mScroller.currVelocity * mLastSign)
+                    }
                 } else {
                     startOverScroll(dyUnconsumed)
                 }
@@ -123,6 +128,7 @@ class BounceLayout : FrameLayout, NestedScrollingParent2 {
 
     override fun onNestedPreFling(target: View, velocityX: Float, velocityY: Float): Boolean {
         mLastSign = if (velocityY < 0) -1 else 1
+        mLastVelocity = velocityY * mLastSign
         mScroller.forceFinished(true)
         mScroller.fling(0, 0, 0, velocityY.toInt(),
             -Int.MAX_VALUE, Int.MAX_VALUE, -Int.MAX_VALUE, Int.MAX_VALUE)
