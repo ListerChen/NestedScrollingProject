@@ -131,7 +131,7 @@ class BounceLayout : FrameLayout, NestedScrollingParent2 {
         mLastVelocity = velocityY * mLastSign
         mScroller.forceFinished(true)
         mScroller.fling(0, 0, 0, velocityY.toInt(),
-            -Int.MAX_VALUE, Int.MAX_VALUE, -Int.MAX_VALUE, Int.MAX_VALUE)
+            Int.MIN_VALUE, Int.MAX_VALUE, Int.MIN_VALUE, Int.MAX_VALUE)
         return false
     }
 
